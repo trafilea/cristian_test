@@ -1,6 +1,6 @@
 FROM golang:1.18
 
-WORKDIR /go-template
+WORKDIR /cristian_test
 
 ENV GO111MODULE=on \
     CGO_ENABLED=0 \
@@ -14,8 +14,8 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o /build/go-template.go cmd/app/main.go
+RUN go build -o /build/cristian_test.go cmd/app/main.go
 
 EXPOSE 80
 
-CMD [ "/build/go-template.go" ]
+CMD [ "/build/cristian_test.go" ]
