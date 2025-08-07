@@ -1,18 +1,18 @@
 apiVersion: v3
 kind: service
 metadata:
-  name: go-template # TODO: Replace with your DD_SERVICE_NAME as in APM
+  name: cristian_test # TODO: Replace with your DD_SERVICE_NAME as in APM
   displayName: Go Template API # TODO: Replace with your service display name
   description: A Go-based microservice template for API operations # TODO: Replace with your service description
   owner: YOUR-TEAM # TODO: Replace with your team name (e.g., platform-team, hydra, etc.)
   links:
     - name: API Documentation
       type: doc
-      url: https://github.com/trafilea/go-template/blob/main/README.md # TODO: Update repository URL
+      url: https://github.com/trafilea/cristian_test/blob/main/README.md # TODO: Update repository URL
       provider: github
     - name: Repository
       type: repo
-      url: https://github.com/trafilea/go-template # TODO: Update repository URL
+      url: https://github.com/trafilea/cristian_test # TODO: Update repository URL
       provider: github
     - name: Dashboard Name # TODO: Update dashboard name
       type: dashboard
@@ -37,30 +37,30 @@ spec:
   languages:
     - go
   dependsOn:
-    - api:go-template # TODO: Update API dependency name if different
+    - api:cristian_test # TODO: Update API dependency name if different
   componentOf:
-    - api:go-template # TODO: Update component relationship if different
+    - api:cristian_test # TODO: Update component relationship if different
 integrations:
   pagerduty:
-    serviceURL: https://trafilea.pagerduty.com/service-directory/go-template # TODO: Update PagerDuty service URL
+    serviceURL: https://trafilea.pagerduty.com/service-directory/cristian_test # TODO: Update PagerDuty service URL
 
 ---
 
 apiVersion: v3
 kind: api
 metadata:
-  name: go-template # TODO: Replace with your DD_SERVICE_NAME as in APM
+  name: cristian_test # TODO: Replace with your DD_SERVICE_NAME as in APM
   displayName: Go Template API # TODO: Replace with your API display name
   description: RESTful API template built with Go and Gin framework # TODO: Replace with your API description
   owner: YOUR-TEAM # TODO: Replace with your team name
   links:
     - name: API Documentation
       type: doc
-      url: https://github.com/trafilea/go-template/blob/main/README.md # TODO: Update repository URL
+      url: https://github.com/trafilea/cristian_test/blob/main/README.md # TODO: Update repository URL
       provider: github
     - name: Repository
       type: repo
-      url: https://github.com/trafilea/go-template # TODO: Update repository URL
+      url: https://github.com/trafilea/cristian_test # TODO: Update repository URL
       provider: github
   tags:
     - team:YOUR-TEAM # TODO: Replace with your team name
@@ -76,9 +76,9 @@ metadata:
       contact: your-team@trafilea.com # TODO: Replace with your team's email
 spec:
   interface:
-    fileRef: "https://github.com/trafilea/go-template/blob/main/openapi.yaml" # TODO: Update to your actual API spec file URL
+    fileRef: "https://github.com/trafilea/cristian_test/blob/main/openapi.yaml" # TODO: Update to your actual API spec file URL
   lifecycle: prod
   tier: high
   type: REST
   implementedBy:
-    - service:go-template # TODO: Update service reference name
+    - service:cristian_test # TODO: Update service reference name
