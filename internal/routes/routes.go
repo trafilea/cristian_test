@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/trafilea/go-template/pkg/apperrors"
+	"github.com/trafilea/cristian_test/pkg/apperrors"
 )
 
 func InitializeRouter() *gin.Engine {
