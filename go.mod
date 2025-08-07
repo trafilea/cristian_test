@@ -1,4 +1,4 @@
-module github.com/trafilea/go-template
+module github.com/trafilea/cristian_test
 
 go 1.18
 
