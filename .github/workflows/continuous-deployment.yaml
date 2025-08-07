@@ -2,8 +2,9 @@ name: Continuous Deployment
 
 on:
   push:
-    branches-ignore:
-      - '**'
+    branches:
+      - 'main'
+        - 'develop'
 
 permissions:
   id-token: write
@@ -16,7 +17,7 @@ jobs:
     uses: trafilea/trafilea-reusable-workflows/.github/workflows/docker_build_and_push.yaml@main
     with:
       AWS_REGION: us-east-1
-      APP_NAME: go-template
+      APP_NAME: cristian_test
     secrets: inherit
 
   upload_env_vars:
@@ -24,7 +25,7 @@ jobs:
     uses: trafilea/trafilea-reusable-workflows/.github/workflows/s3_upload_env_file.yaml@main
     needs: build_and_push_image
     with:
-      APP_NAME: go-template
+      APP_NAME: cristian_test
       DOCKER_IMAGE_TAG: ${{ needs.build_and_push_image.outputs.image_tag }}
       ENV_FILE_TYPE: all
     secrets:
@@ -37,9 +38,9 @@ jobs:
     needs: upload_env_vars
     if: github.ref == 'refs/heads/develop'
     with:
-      APP_NAME: go-template
+      APP_NAME: cristian_test
       ENV_ACCOUNT_ID: '571168450468'
-      ECR_REPO_NAME: go-template
+      ECR_REPO_NAME: cristian_test
       DOCKER_IMAGE_TAG: ${{needs.build_and_push_image.outputs.image_tag}}
     secrets: inherit
 
@@ -49,7 +50,7 @@ jobs:
     needs: deploy_to_dev
     if: github.ref == 'refs/heads/develop'
     with:
-      APP_NAME: go-template
+      APP_NAME: cristian_test
       ENVIRONMENT: dev
       DOCKER_IMAGE_TAG: ${{ needs.build_and_push_image.outputs.image_tag }}
     secrets:
