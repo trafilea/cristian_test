@@ -10,7 +10,7 @@ import (
 	"testing"
 
 	"github.com/gin-gonic/gin"
-	"github.com/trafilea/go-template/pkg/apperrors"
+	"github.com/trafilea/cristian_test/pkg/apperrors"
 )
 
 func TestPing(t *testing.T) {
