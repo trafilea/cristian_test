@@ -15,7 +15,7 @@ jobs:
     name: Production
     uses: trafilea/trafilea-reusable-workflows/.github/workflows/deploy_terragrunt.yaml@main
     with:
-      APP_NAME: go-template
+      APP_NAME: cristian_test
       ENVIRONMENT: prod
       DOCKER_IMAGE_TAG: ${{ github.ref_name }}
     secrets: inherit
@@ -25,7 +25,7 @@ jobs:
     uses: trafilea/trafilea-reusable-workflows/.github/workflows/s3_upload_env_file.yaml@main
     needs: deploy_prod
     with:
-      APP_NAME: go-template
+      APP_NAME: cristian_test
       DOCKER_IMAGE_TAG: ${{ github.ref_name }}
       ENV_FILE_TYPE: all
     secrets:
@@ -37,7 +37,7 @@ jobs:
     uses: trafilea/trafilea-reusable-workflows/.github/workflows/argocd_deployment.yaml@main
     needs: upload_env_vars
     with:
-      APP_NAME: go-template
+      APP_NAME: cristian_test
       ENVIRONMENT: prod
       DOCKER_IMAGE_TAG: ${{ github.ref_name }}
     secrets:
